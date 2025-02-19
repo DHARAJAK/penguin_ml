@@ -10,6 +10,10 @@ st.write(
     "a model built on the Palmer Penguins dataset. Use the form before"
     "to get started!"
 )
+password_guess = st.text_input("What is the Password?")
+if password_guess != "streamlit_password":
+    st.stop()
+
 penguin_df = pd.read_csv("penguins.csv")
 rf_pickle = open("random_forest_penguin.pkl", "rb")
 map_pickle = open("output_penguin.pkl", "rb")
